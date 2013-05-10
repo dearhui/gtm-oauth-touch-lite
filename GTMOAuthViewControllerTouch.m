@@ -342,12 +342,15 @@ finishedWithAuth:(GTMOAuthAuthentication *)auth
   if ([html length] > 0) {
     [[self webView] loadHTMLString:html baseURL:nil];
   }
-
+#if 0
   [rightBarButtonItem_ setCustomView:navButtonsView_];
   [[self navigationItem] setRightBarButtonItem:rightBarButtonItem_];
+#endif
 }
 
+// __TODO 改寫 不做 pop
 - (void)popView {
+#if 0
   if ([[self navigationController] topViewController] == self) {
     if (![[self view] isHidden]) {
       // Set the flag to our viewWillDisappear method so it knows
@@ -359,6 +362,7 @@ finishedWithAuth:(GTMOAuthAuthentication *)auth
       [[self view] setHidden:YES];
     }
   }
+#endif
 }
 
 - (void)cancelSigningIn {

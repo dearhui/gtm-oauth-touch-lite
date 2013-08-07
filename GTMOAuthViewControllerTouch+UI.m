@@ -27,10 +27,4 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-#pragma mark -
-- (NSString *)version {
-    return [paramValues_ objectForKey:kOAuthVersionKey];
-}
-
 @end

@@ -55,6 +55,11 @@ static NSString *const kServiceProviderKey        = @"serviceProvider";
 static NSString *const kUserEmailKey              = @"email";
 static NSString *const kUserEmailIsVerifiedKey    = @"isVerified";
 
+// Flickr use keys
+static NSString *const kFlickrUserIDkey           = @"user_nsid";
+static NSString *const kFlickrUsernameKey         = @"username";
+static NSString *const kFlickrUserFullnamekey     = @"fullname";
+
 @interface GTMOAuthAuthentication (PrivateMethods)
 
 - (void)addAuthorizationHeaderToRequest:(NSMutableURLRequest *)request
@@ -967,6 +972,34 @@ static NSString *const kUserEmailIsVerifiedKey    = @"isVerified";
 - (void)setAccessToken:(NSString *)str {
   [self setToken:str];
   [self setHasAccessToken:YES];
+}
+
+#pragma mark - flickr setter / gatter
+- (NSString *)flickrUserId {
+    return [paramValues_ objectForKey:kFlickrUserIDkey];
+}
+
+- (void)setFlickrUserId:(NSString *)str {
+    [paramValues_ setValue:[[str copy] autorelease]
+                    forKey:kFlickrUserIDkey];
+}
+
+- (NSString *)flickrUsername {
+    return [paramValues_ objectForKey:kFlickrUsernameKey];
+}
+
+- (void)setFlickrUsername:(NSString *)str {
+    [paramValues_ setValue:[[str copy] autorelease]
+                    forKey:kFlickrUsernameKey];
+}
+
+- (NSString *)flickrUserFullname {
+    return [paramValues_ objectForKey:kFlickrUserFullnamekey];
+}
+
+- (void)setFlickrUserFullname:(NSString *)str {
+    [paramValues_ setValue:[[str copy] autorelease]
+                    forKey:kFlickrUserFullnamekey];
 }
 
 #pragma mark Utility Routines

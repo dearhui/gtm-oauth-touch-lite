@@ -481,6 +481,22 @@ static NSString *const kFlickrUserFullnamekey     = @"fullname";
   if (verified) {
     [self setUserEmailIsVerified:verified];
   }
+    
+    // ====== Flickr OAuth ============
+    NSString *flickr_user_id = [dict objectForKey:kFlickrUserIDkey];
+    if (flickr_user_id) {
+        [self setFlickrUserId:flickr_user_id];
+    }
+    
+    NSString *flickr_username = [dict objectForKey:kFlickrUsernameKey];
+    if (flickr_username) {
+        [self setFlickrUsername:flickr_username];
+    }
+    
+    NSString *flickr_fullname = [dict objectForKey:kFlickrUserFullnamekey];
+    if (flickr_fullname) {
+        [self setFlickrUserFullname:flickr_fullname];
+    }
 }
 
 - (void)setKeysForResponseData:(NSData *)data {
@@ -1066,6 +1082,8 @@ static NSString *const kFlickrUserFullnamekey     = @"fullname";
 + (NSDictionary *)dictionaryWithResponseData:(NSData *)data {
   NSString *responseStr = [[[NSString alloc] initWithData:data
                                                  encoding:NSUTF8StringEncoding] autorelease];
+    
+    NSLog(@"%@", responseStr);
   NSDictionary *dict = [self dictionaryWithResponseString:responseStr];
   return dict;
 }

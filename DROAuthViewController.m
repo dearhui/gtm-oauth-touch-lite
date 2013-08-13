@@ -1,18 +1,14 @@
 //
-//  GTMOAuthViewControllerTouch+UI.m
+//  DROAuthViewController.m
 //  iLoveFlickr
 //
-//  Created by Ming Hui Ho on 13/8/6.
+//  Created by Ming Hui Ho on 13/8/13.
 //  Copyright (c) 2013年 Ming Hui Ho. All rights reserved.
 //
 
-#import "GTMOAuthViewControllerTouch+UI.h"
+#import "DROAuthViewController.h"
 
-@interface GTMOAuthViewControllerTouch ()
-
-@end
-
-@implementation GTMOAuthViewControllerTouch (UI)
+@implementation DROAuthViewController
 
 - (void)viewDidLoad
 {

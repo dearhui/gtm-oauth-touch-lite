@@ -123,7 +123,7 @@ _EXTERN NSString* const kGTMOAuthSignatureMethodRSA_SHA1  _INITIALIZE_AS(@"RSA-S
 @property (nonatomic, copy) NSString *nonce;
 
 @property (nonatomic, copy) NSString *flickrUserId;
-@property (nonatomic, copy) NSString *flcikrUsername;
+@property (nonatomic, copy) NSString *flickrUsername;
 @property (nonatomic, copy) NSString *flickrUserFullname;
 
 // other standard non-parameter OAuth protocol properties

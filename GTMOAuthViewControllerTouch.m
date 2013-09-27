@@ -613,12 +613,14 @@ finishedWithAuth:(GTMOAuthAuthentication *)auth
   BOOL value = YES;
   if (!isInsideShouldAutorotateToInterfaceOrientation_) {
     isInsideShouldAutorotateToInterfaceOrientation_ = YES;
+#if !defined(__IPHONE_6_0) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0      
     UIViewController *navigationController = [self navigationController];
     if (navigationController != nil) {
       value = [navigationController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
     } else {
       value = [super shouldAutorotateToInterfaceOrientation:interfaceOrientation];
     }
+#endif
     isInsideShouldAutorotateToInterfaceOrientation_ = NO;
   }
   return value;
